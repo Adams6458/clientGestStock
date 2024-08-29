@@ -1,0 +1,46 @@
+{
+  "annotations": {
+    "changelogDate": "20240828085221"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "userID",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "message",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "codeErr",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "textExpl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "errcode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "transactionId",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Rapport",
+  "relationships": [
+    {
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "rapport",
+      "relationshipName": "user",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipWithBuiltInEntity": true
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

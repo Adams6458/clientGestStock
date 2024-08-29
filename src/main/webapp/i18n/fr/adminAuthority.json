@@ -1,5 +1,5 @@
 {
-  "gatewayPaiementApp": {
+  "paiementApp": {
     "adminAuthority": {
       "home": {
         "title": "Authorities",

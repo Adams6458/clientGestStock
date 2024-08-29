@@ -1,0 +1,35 @@
+{
+  "paiementApp": {
+    "client": {
+      "home": {
+        "title": "Clients",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Client",
+        "createOrEditLabel": "Créer ou éditer un Client",
+        "notFound": "Aucun Client trouvé"
+      },
+      "created": "Un nouveau Client a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Client avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Client avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Client {{ id }} ?"
+      },
+      "detail": {
+        "title": "Client"
+      },
+      "id": "ID",
+      "codeAgence": "Code Agence",
+      "telephone": "Telephone",
+      "nom": "Nom",
+      "prenom": "Prenom",
+      "sexe": "Sexe",
+      "titre": "Titre",
+      "piece": "Piece",
+      "reference": "Reference",
+      "autoriteDelivre": "Autorite Delivre",
+      "typeClient": "Type Client",
+      "transaction": "Transaction",
+      "user": "User"
+    }
+  }
+}

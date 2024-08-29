@@ -1,0 +1,83 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-rapport-heading" data-cy="RapportCreateUpdateHeading" jhiTranslate="paiementApp.rapport.home.createOrEditLabel">
+        Créer ou éditer un Rapport
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="paiementApp.rapport.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" for="field_userID" jhiTranslate="paiementApp.rapport.userID">User ID</label>
+          <input type="text" class="form-control" name="userID" id="field_userID" data-cy="userID" formControlName="userID" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_message" jhiTranslate="paiementApp.rapport.message">Message</label>
+          <input type="text" class="form-control" name="message" id="field_message" data-cy="message" formControlName="message" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_codeErr" jhiTranslate="paiementApp.rapport.codeErr">Code Err</label>
+          <input type="text" class="form-control" name="codeErr" id="field_codeErr" data-cy="codeErr" formControlName="codeErr" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_textExpl" jhiTranslate="paiementApp.rapport.textExpl">Text Expl</label>
+          <input type="text" class="form-control" name="textExpl" id="field_textExpl" data-cy="textExpl" formControlName="textExpl" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_errcode" jhiTranslate="paiementApp.rapport.errcode">Errcode</label>
+          <input type="text" class="form-control" name="errcode" id="field_errcode" data-cy="errcode" formControlName="errcode" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_transactionId" jhiTranslate="paiementApp.rapport.transactionId">Transaction Id</label>
+          <input
+            type="text"
+            class="form-control"
+            name="transactionId"
+            id="field_transactionId"
+            data-cy="transactionId"
+            formControlName="transactionId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_user" jhiTranslate="paiementApp.rapport.user">User</label>
+          <select class="form-control" id="field_user" data-cy="user" name="user" formControlName="user" [compareWith]="compareUser">
+            <option [ngValue]="null"></option>
+            @for (userOption of usersSharedCollection; track $index) {
+              <option [ngValue]="userOption">{{ userOption.id }}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Annuler</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Sauvegarder</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+entity Rapport
+{
+	userID String
+	message String
+    codeErr String
+    textExpl String
+    errcode String
+    transactionId String
+}
+
+entity Transaction
+{
+	userID String
+	code String
+    message String
+    transactionId String
+    montant Double
+}
+entity Client
+{
+	codeAgence String
+    telephone String
+    nom String
+    prenom String
+    sexe String
+    titre String
+    piece String
+    reference String
+    autoriteDelivre String
+    typeClient String
+}
+
+relationship ManyToOne
+{
+ 	 Rapport to User with builtInEntity
+     Transaction to User with builtInEntity
+     Client to User with builtInEntity
+}
+
+relationship OneToMany
+{
+	Client to Transaction
+}
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

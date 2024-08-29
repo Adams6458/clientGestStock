@@ -1,0 +1,74 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (client()) {
+      <div>
+        <h2 data-cy="clientDetailsHeading"><span jhiTranslate="paiementApp.client.detail.title">Client</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ client()!.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="paiementApp.client.codeAgence">Code Agence</span></dt>
+          <dd>
+            <span>{{ client()!.codeAgence }}</span>
+          </dd>
+          <dt><span jhiTranslate="paiementApp.client.telephone">Telephone</span></dt>
+          <dd>
+            <span>{{ client()!.telephone }}</span>
+          </dd>
+          <dt><span jhiTranslate="paiementApp.client.nom">Nom</span></dt>
+          <dd>
+            <span>{{ client()!.nom }}</span>
+          </dd>
+          <dt><span jhiTranslate="paiementApp.client.prenom">Prenom</span></dt>
+          <dd>
+            <span>{{ client()!.prenom }}</span>
+          </dd>
+          <dt><span jhiTranslate="paiementApp.client.sexe">Sexe</span></dt>
+          <dd>
+            <span>{{ client()!.sexe }}</span>
+          </dd>
+          <dt><span jhiTranslate="paiementApp.client.titre">Titre</span></dt>
+          <dd>
+            <span>{{ client()!.titre }}</span>
+          </dd>
+          <dt><span jhiTranslate="paiementApp.client.piece">Piece</span></dt>
+          <dd>
+            <span>{{ client()!.piece }}</span>
+          </dd>
+          <dt><span jhiTranslate="paiementApp.client.reference">Reference</span></dt>
+          <dd>
+            <span>{{ client()!.reference }}</span>
+          </dd>
+          <dt><span jhiTranslate="paiementApp.client.autoriteDelivre">Autorite Delivre</span></dt>
+          <dd>
+            <span>{{ client()!.autoriteDelivre }}</span>
+          </dd>
+          <dt><span jhiTranslate="paiementApp.client.typeClient">Type Client</span></dt>
+          <dd>
+            <span>{{ client()!.typeClient }}</span>
+          </dd>
+          <dt><span jhiTranslate="paiementApp.client.user">User</span></dt>
+          <dd>
+            <span>{{ client()!.user?.id }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Retour</span>
+        </button>
+
+        <button type="button" [routerLink]="['/client', client()!.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editer</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

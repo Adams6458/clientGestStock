@@ -1,6 +1,6 @@
 {
   "global": {
-    "title": "GatewayPaiement",
+    "title": "Paiement",
     "browsehappy": "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/?locale=en\">upgrade your browser</a> to improve your experience.",
     "menu": {
       "home": "Home",
@@ -8,7 +8,9 @@
       "entities": {
         "main": "Entities",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
-        "adminAuthority": "Authority"
+        "rapport": "Rapport",
+        "transaction": "Transaction",
+        "client": "Client"
       },
       "account": {
         "main": "Account",
@@ -21,7 +23,6 @@
       },
       "admin": {
         "main": "Administration",
-        "gateway": "Gateway",
         "userManagement": "User management",
         "tracker": "User tracker",
         "metrics": "Metrics",

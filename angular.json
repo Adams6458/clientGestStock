@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "gateway-paiement": {
+    "paiement": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -76,15 +76,15 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "buildTarget": "gateway-paiement:build:development",
+            "buildTarget": "paiement:build:development",
             "port": 4200
           },
           "configurations": {
             "production": {
-              "buildTarget": "gateway-paiement:build:production"
+              "buildTarget": "paiement:build:production"
             },
             "development": {
-              "buildTarget": "gateway-paiement:build:development"
+              "buildTarget": "paiement:build:development"
             }
           },
           "defaultConfiguration": "development"

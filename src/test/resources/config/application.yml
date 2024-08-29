@@ -15,18 +15,7 @@
 
 spring:
   application:
-    name: gatewayPaiement
-  autoconfigure:
-    exclude:
-      - org.springframework.cloud.gateway.config.GatewayMetricsAutoConfiguration
-  cloud:
-    consul:
-      discovery:
-        enabled: false
-        instanceId: ${spring.application.name}:${spring.application.instance-id:${random.value}}
-      config:
-        enabled: false
-      enabled: false
+    name: paiement
   # Replace by 'prod, faker' to add the faker context and have sample data loaded in production
   liquibase:
     contexts: test
@@ -41,13 +30,13 @@ spring:
     basename: i18n/messages
   task:
     execution:
-      thread-name-prefix: gateway-paiement-task-
+      thread-name-prefix: paiement-task-
       pool:
         core-size: 1
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: gateway-paiement-scheduling-
+      thread-name-prefix: paiement-scheduling-
       pool:
         size: 20
   thymeleaf:
@@ -64,9 +53,9 @@ server:
 # ===================================================================
 jhipster:
   clientApp:
-    name: 'gatewayPaiementApp'
+    name: 'paiementApp'
   mail:
-    from: gatewayPaiement@localhost.com
+    from: paiement@localhost.com
     base-url: http://127.0.0.1:8080
   logging:
     # To test json console appender
@@ -80,7 +69,7 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-        base64-secret: MTA0ZjFkNGFiYWE4ZDlmZjY0NjI3ZDVkODE1ZGQ5YTRiZGFhNjI0M2FmZmI5NzFiZWM2MzI3YmE3ZTlhMzY3ZWU2OTY3ZTQ0MDY3ZWYyODE3ZDg2NjAwMTRiYjVjNmQxMWQzOWMyYzg3MWVkZDNjOWJjZDgzNWNhN2IwZjJlODc=
+        base64-secret: Y2FhMjZhZGI4NThjYWI3MDg0YmZhYWRhNTU0YWQzMDljYzJlNDAzMmU1NmI4NTE1ODA2ZGY5NmY0MzU4NmEzYmIyMjUyZDA2NTE5MTBkODhiNGU3YTAxYjZlMGYzMWQ0ZjdmN2FlMWU3Y2I4MGQ5ZTUwODFhOTNjYjliMGU0N2U=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 86400
